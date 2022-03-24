@@ -6,73 +6,76 @@ using UnityEditor;
 using UnityEngine;
 using Common.Editors;
 
-class Test : MonoBehaviour
+namespace Common.Test
 {
-
-}
-
-[CustomEditor(typeof(Test))]
-class TestEditor : Editor
-{
-    Table<int> table;
-
-    public static void OnEnableStatic(ref Table<int> table)
+    class Test : MonoBehaviour
     {
-        table = new Table<int>();
-        table.Rows = new List<int>();
-        table.AddColumn(new Table<int>.LabelColumn()
+
+    }
+
+    [CustomEditor(typeof(Test))]
+    class TestEditor : Editor
+    {
+        Table<int> table;
+
+        public static void OnEnableStatic(ref Table<int> table)
         {
-            HeaderText = "LABEL",
-            ExpandWidth = true,
-            Getter = (x) => x.ToString(),
-            //OnHeaderClickedSorter = (x,y) => x - y,
-        }); 
-        table.AddColumn(new Table<int>.TextFieldColumn()
+            table = new Table<int>();
+            table.Rows = new List<int>();
+            table.AddColumn(new Table<int>.LabelColumn()
+            {
+                HeaderText = "LABEL",
+                ExpandWidth = true,
+                Getter = (x) => x.ToString(),
+                //OnHeaderClickedSorter = (x,y) => x - y,
+            });
+            table.AddColumn(new Table<int>.TextFieldColumn()
+            {
+                HeaderText = "TEXT",
+                Getter = (x) => (x + 1).ToString(),
+                Setter = (x, y) => x = Convert.ToInt32(y),
+            });
+            table.AddColumn(new Table<int>.RemoveButtonColumn()
+            {
+
+            });
+        }
+
+        private void OnEnable()
         {
-            HeaderText = "TEXT",
-            Getter = (x) => (x + 1).ToString(),
-            Setter = (x, y) => x = Convert.ToInt32(y),
-        });
-        table.AddColumn(new Table<int>.RemoveButtonColumn()
+            OnEnableStatic(ref table);
+        }
+
+        public override void OnInspectorGUI()
         {
-
-        });
+            table.DrawGUI();
+            if (GUILayout.Button("Add"))
+                table.Rows.Add(UnityEngine.Random.Range(1, 10));
+        }
     }
 
-    private void OnEnable()
+
+    class TesetWindow : EditorWindow
     {
-        OnEnableStatic(ref table);
-    }
+        Table<int> table;
 
-    public override void OnInspectorGUI()
-    {
-        table.DrawGUI();
-        if (GUILayout.Button("Add"))
-            table.Rows.Add(UnityEngine.Random.Range(1, 10));
-    }
-}
+        [MenuItem("Show/Text")]
+        static void ShowTest()
+        {
+            var w = GetWindow<TesetWindow>();
+            w.Show();
+        }
 
+        private void OnEnable()
+        {
+            TestEditor.OnEnableStatic(ref table);
+        }
 
-class TesetWindow : EditorWindow
-{
-    Table<int> table;
-
-    [MenuItem("Show/Text")]
-    static void ShowTest()
-    {
-        var w = GetWindow<TesetWindow>();
-        w.Show();
-    }
-
-    private void OnEnable()
-    {
-        TestEditor.OnEnableStatic(ref table);
-    }
-
-    public void OnGUI()
-    {
-        table.DrawGUI();
-        if (GUILayout.Button("Add"))
-            table.Rows.Add(UnityEngine.Random.Range(1, 10));
+        public void OnGUI()
+        {
+            table.DrawGUI();
+            if (GUILayout.Button("Add"))
+                table.Rows.Add(UnityEngine.Random.Range(1, 10));
+        }
     }
 }
