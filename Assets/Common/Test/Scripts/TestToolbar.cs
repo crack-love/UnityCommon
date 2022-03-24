@@ -1,11 +1,11 @@
 using Common;
-using Common.Editors;
+using CommonEditor;
 using System;
 using UnityEditor;
 using UnityEngine;
 
 
-namespace Common.Test
+namespace Test
 {
     [ExecuteAlways]
     class TestToolbar : MonoBehaviour//, IT

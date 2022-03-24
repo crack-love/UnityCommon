@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-namespace Common.Test
+namespace Test
 {
     [Serializable]
     public class A

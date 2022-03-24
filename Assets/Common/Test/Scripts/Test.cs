@@ -4,9 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using Common.Editors;
+using CommonEditor;
 
-namespace Common.Test
+namespace Test
 {
     class Test : MonoBehaviour
     {

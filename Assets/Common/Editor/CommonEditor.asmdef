@@ -1,6 +1,6 @@
 {
-    "name": "Common.Editors",
-    "rootNamespace": "Common.Editors",
+    "name": "CommonEditor",
+    "rootNamespace": "CommonEditor",
     "references": [
         "GUID:3ef497b9e1a50014f9ada71dcbdad7a5"
     ],

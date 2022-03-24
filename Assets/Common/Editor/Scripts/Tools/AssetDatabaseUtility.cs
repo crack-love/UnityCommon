@@ -4,7 +4,7 @@ using UnityEditor;
 /// <summary>
 /// 2020-12-22 화 오후 7:16:33, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common.Editors
+namespace CommonEditor
 {
     public static class AssetDatabaseUtility
     {

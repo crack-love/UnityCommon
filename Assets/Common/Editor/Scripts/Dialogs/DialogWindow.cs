@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 2022-03-23 오후 3:55:52, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace Common.Editors
+namespace CommonEditor
 {
     class DialogWindow : EditorWindow
     {

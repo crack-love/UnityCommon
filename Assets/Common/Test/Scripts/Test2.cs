@@ -1,18 +1,15 @@
 using Common;
-using Common.Editors;
+using CommonEditor;
 using UnityEngine;
 
-
-namespace Common.Test
+namespace Test
 {
     [ExecuteAlways]
     class Test2 : MonoBehaviour//, IT
     {
-        [Button("OnEnable")]
-
+        [Common.Button("OnEnable")]
         public string a;
         public bool btn;
-
         private void OnEnable()
         {
             //var d = Dialog.Factory.Create();

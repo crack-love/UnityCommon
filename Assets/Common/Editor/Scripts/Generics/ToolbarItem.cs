@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 2021-06-25 금 오후 3:47:58, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common.Editors
+namespace CommonEditor
 {
     public abstract class ToolbarItem 
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 2022-03-21 오후 3:45:13, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace Common.Editors
+namespace CommonEditor
 {
     /// <summary>
     /// Use Dialog.Factory
