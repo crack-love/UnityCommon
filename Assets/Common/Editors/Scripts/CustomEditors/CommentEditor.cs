@@ -2,7 +2,7 @@ using Common;
 using UnityEditor;
 using UnityEngine;
 
-namespace CommonEditor
+namespace Common.Editors
 {
     [CustomEditor(typeof(Comment))]
     class CommentEditor : Editor

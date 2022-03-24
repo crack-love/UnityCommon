@@ -1,5 +1,5 @@
 using Common;
-using CommonEditor;
+using Common.Editors;
 using UnityEngine;
 
 [ExecuteAlways]

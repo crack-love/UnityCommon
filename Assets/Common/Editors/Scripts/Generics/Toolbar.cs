@@ -7,7 +7,7 @@ using UnityEngine.Events;
 /// <summary>
 /// 2021-02-03 수 오후 6:37:27, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace CommonEditor
+namespace Common.Editors
 {
     public class Toolbar
     {

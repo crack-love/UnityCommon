@@ -5,7 +5,7 @@ using Common;
 /// <summary>
 /// 2022-03-20 오후 6:23:05, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace CommonEditor
+namespace Common.Editors
 {
     [CustomEditor(typeof(RobustComment))]
     class RobustCommentEditor : Editor

@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 2022-03-23 오후 5:48:29, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace CommonEditor
+namespace Common.Editors
 {
     public class ButtonFactory
     {

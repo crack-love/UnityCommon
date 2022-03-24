@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 2022-03-24 오후 7:24:36, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace CommonEditor
+namespace Common.Editors
 {
     public partial class Table<TRow>
     {

@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace CommonEditor
+namespace Common.Editors
 {
     public static class SceneViewRaycaster
     {
