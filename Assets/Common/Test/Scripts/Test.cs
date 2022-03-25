@@ -10,7 +10,20 @@ namespace Test
 {
     class Test : MonoBehaviour
     {
+        private void tt()
+        {
+            using var list = Common.ListPool<int>.Get();
+            list.Add(1);
+            list.ClearReturn();
+        }
+    }
 
+    class foo : IDisposable
+    {
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     [CustomEditor(typeof(Test))]

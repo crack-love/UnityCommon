@@ -1,48 +1,61 @@
-﻿#if UNITY_EDITOR
-using UnityEditor;
-#endif
-using UnityEngine;
-using UnityCommon;
+﻿using System;
 using System.Collections.Generic;
-using System;
 
 /// <summary>
 /// 2021-04-19 월 오후 6:37:24, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
     /// <summary>
-    /// Initial state is setted outside of pool
+    /// A List can return to pool
     /// </summary>
-    class ListPoolItem<T> : List<T>
+    public class ListPoolItem<T> : List<T>, IDisposable, IPoolItemCallback
     {
-        bool m_isInsidePool = false;
+        [NonSerialized]
+        bool m_isOutsideOfPool = true;
 
         ~ListPoolItem()
         {
-            if (!m_isInsidePool)
+            if (m_isOutsideOfPool)
             {
-                ListPool<T>.Return(this);
+                m_isOutsideOfPool = false;
 
-                GC.ReRegisterForFinalize(this);
+                if (ListPool<T>.Return(this))
+                {
+                    Clear();
+                    GC.ReRegisterForFinalize(this);
+                }
             }
         }
 
-        public void OnEnpool()
+        public bool ClearReturn()
         {
-            Clear();
+            if (m_isOutsideOfPool)
+            {
+                m_isOutsideOfPool = false;
 
-            m_isInsidePool = true;
+                if (ListPool<T>.Return(this))
+                {
+                    Clear();
+                }
+            }
+
+            return true;
         }
 
-        public void OnDepool()
+        void IDisposable.Dispose()
         {
-            m_isInsidePool = false;
+            ClearReturn();
         }
 
-        public void Destroy()
+        void IPoolItemCallback.OnDepool()
         {
-            m_isInsidePool = true;
+            m_isOutsideOfPool = true;
+        }
+
+        void IPoolItemCallback.OnEnpool()
+        {
+            m_isOutsideOfPool = false;
         }
     }
 }

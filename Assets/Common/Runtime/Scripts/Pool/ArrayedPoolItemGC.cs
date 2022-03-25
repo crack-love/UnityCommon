@@ -23,10 +23,9 @@ namespace Common
             {
                 m_isOutsideOfPool = false;
 
-                Clear();
-
                 if (s_pool.TryReturn((TDerived)this))
                 {
+                    Clear();
                     GC.ReRegisterForFinalize(this);
                 }
             }
@@ -34,19 +33,21 @@ namespace Common
 
         public bool ClearReturn()
         {
-            Clear();
+            if (m_isOutsideOfPool)
+            {
+                // setting flag off
+                // when pool capacity is full and flag is even ture,
+                // there will be one more returning overhead
+                m_isOutsideOfPool = false;
 
-            // setting flag off
-            // when pool capacity is full and flag is even ture,
-            // there will be one more returning overhead
-            m_isOutsideOfPool = false;
+                if (s_pool.TryReturn((TDerived)this))
+                {
+                    Clear();
+                    return true;
+                }
+            }
 
-            return s_pool.TryReturn((TDerived)this);
-        }
-
-        public void SetDestroyed()
-        {
-            m_isOutsideOfPool = false;
+            return false;
         }
 
         public abstract void Clear();
