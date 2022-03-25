@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// 2021-04-19 월 오후 6:35:40, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
 namespace Common
