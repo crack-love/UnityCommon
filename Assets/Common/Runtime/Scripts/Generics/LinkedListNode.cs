@@ -1,12 +1,9 @@
-﻿using UnityEngine;
-using UnityCommon;
-
-/// <summary>
+﻿/// <summary>
 /// 2020-09-20
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
-    public class LinkedListNode<T> : LinkedPoolItemGC<LinkedListNode<T>>
+    public class LinkedListNode<T> : IRemovableNode<T>
     {
         LinkedList<T> m_list;
         LinkedListNode<T> m_next;
@@ -25,7 +22,7 @@ namespace UnityCommon
             internal set => m_next = value;
         }
 
-        public LinkedListNode<T> Previous
+        public LinkedListNode<T> Prev
         {
             get => m_prev;
             internal set => m_prev = value;
@@ -37,36 +34,9 @@ namespace UnityCommon
             set => m_value = value;
         }
 
-        public override LinkedListNode<T> NextPoolItem
+        void IRemovableNode<T>.Remove()
         {
-            get => m_next;
-            set => m_next = value;
-        }
-
-        public static LinkedListNode<T> Create(T value)
-        {
-            if (!s_pool.TryGet(out var res))
-            {
-                res = new LinkedListNode<T>();
-            }
-
-            res.m_list = null;
-            res.m_value = value;
-            res.m_next = res.m_prev = default;
-
-            return res;
-        }
-
-        LinkedListNode()
-        {
-
-        }
-
-        public override void Clear()
-        {
-            m_list = null;
-            m_next = m_prev = null;
-            m_value = default;
+            m_list.Remove(this);
         }
     }
 }
