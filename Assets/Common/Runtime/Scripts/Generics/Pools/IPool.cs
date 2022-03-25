@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using UnityCommon;
-
-/// <summary>
+﻿/// <summary>
 /// 2020-09-11 금 오후 4:30:03, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
 namespace Common
