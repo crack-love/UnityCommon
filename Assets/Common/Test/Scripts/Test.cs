@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using CommonEditor;
+using Common;
 
 namespace Test
 {
@@ -12,6 +13,7 @@ namespace Test
     {
         private void tt()
         {
+            //CubeDirection..CubeDelta.a.[0].x += 1;
             using var list = Common.ListPool<int>.Get();
             list.Add(1);
             list.ClearReturn();
