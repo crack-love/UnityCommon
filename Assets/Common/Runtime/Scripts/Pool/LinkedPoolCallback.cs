@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// 2020-06-12
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
-    /// <summary>
-    /// T is <see cref="ILinkedPoolItemGC{T}"/>
-    /// </summary>
     public class LinkedPoolCallback<T> : LinkedPool<T> where T : ILinkedPoolItemCallback<T>
     {
         public new bool TryGet(out T value)
@@ -16,6 +13,7 @@ namespace UnityCommon
             if (base.TryGet(out value))
             {
                 value.OnDepool();
+
                 return true;
             }
 
@@ -27,6 +25,7 @@ namespace UnityCommon
             if (base.TryReturn(value))
             {
                 value.OnEnpool();
+
                 return true;
             }
 

@@ -4,14 +4,15 @@ using System.Collections.Generic;
 /// <summary>
 /// 2020-09-22
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
     /// <summary>
-    /// Returning <see cref="SingletoneBase{T}"/> typed <see cref="LinkedPoolCallback{T}"/> when <see cref="GC"/>. Item is <see cref="ILinkedPoolItem{T}"/>
+    /// Can return to pool when <see cref="GC"/>
+    /// toward <see cref="LinkedPoolCallback{T}"/> from <see cref="ObjectSingletone{T}"/>
     /// </summary>
     public abstract class LinkedPoolItemGC<TDerived> : ILinkedPoolItemCallback<TDerived> where TDerived : LinkedPoolItemGC<TDerived>//, new()
     {
-        protected static LinkedPoolCallback<TDerived> s_pool = Singletone<LinkedPoolCallback<TDerived>>.Instance;
+        protected static LinkedPoolCallback<TDerived> s_pool = ObjectSingletone<LinkedPoolCallback<TDerived>>.Instance;
 
         bool m_isOutsideOfPool = true;
 
@@ -32,11 +33,16 @@ namespace UnityCommon
             }
         }
 
-        public void ClearReturn()
+        public bool ClearReturn()
         {
             Clear();
 
-            s_pool.TryReturn((TDerived)this);
+            // setting flag off
+            // when pool capacity is full and flag is even ture,
+            // there will be one more returning overhead
+            m_isOutsideOfPool = false;
+
+            return s_pool.TryReturn((TDerived)this);
         }
 
         public abstract void Clear();

@@ -4,23 +4,22 @@ using System.Collections.Generic;
 /// <summary>
 /// 2020-09-22
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
     /// <summary>
-    /// Returning pool.
-    /// using <see cref="SingletoneBase{T}"/> typed <see cref="LinkedPool{T}"/>
+    /// Can return to pool as <see cref="LinkedPool{T}"/> : <see cref="ObjectSingletone{T}"/>
     /// </summary>
     public abstract class LinkedPoolItem<TDerived> : ILinkedPoolItem<TDerived> where TDerived : LinkedPoolItem<TDerived>//, new()
     {
-        protected static LinkedPool<TDerived> s_pool = Singletone<LinkedPool<TDerived>>.Instance;
+        protected static LinkedPool<TDerived> s_pool = ObjectSingletone<LinkedPool<TDerived>>.Instance;
 
         public abstract TDerived NextPoolItem { get; set; }
 
-        public void ClearReturn()
+        public bool ClearReturn()
         {
             Clear();
 
-            s_pool.TryReturn((TDerived)this);
+            return s_pool.TryReturn((TDerived)this);
         }
 
         public abstract void Clear();
