@@ -1,18 +1,15 @@
-﻿#if UNITY_EDITOR
-using UnityEditor;
-#endif
+﻿using System;
 using UnityEngine;
-using UnityCommon;
-using System;
 
 /// <summary>
 /// 2021-05-24 월 오후 10:54:18, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
-    public class ArrayedPool<T> : Singletone<ArrayedPool<T>>, IPool<T>
+    public class ArrayedPool<T> : IPool<T>
     {
-        const int InitialSize = 4;
+        const int InitialSize = 16;
+        const int InitialMaxCap = 512;
 
         T[] m_array;
         int m_count;
@@ -23,40 +20,32 @@ namespace UnityCommon
         public int MaxCapacity
         {
             get => m_maxCapacity;
-            set
-            {
-                value = value.Clamp(1, CommonPoolVariables.MaxCapacity);
-                m_maxCapacity = value;
-            }
+            set => m_maxCapacity = value;
         }
 
         public ArrayedPool()
         {
-            m_mutex = new object();
             m_array = new T[InitialSize];
-            m_maxCapacity = 512;
+            m_maxCapacity = InitialMaxCap;
         }
 
         public bool TryGet(out T value)
         {
-            lock (m_mutex)
+            // empty
+            if (m_count <= 0)
             {
-                // empty
-                if (m_count <= 0)
-                {
-                    value = default;
+                value = default;
 
-                    return false;
-                }
-                else
-                {
-                    // pop item
-                    var idx = --m_count;
-                    value = m_array[idx];
+                return false;
+            }
+            else
+            {
+                // pop item
+                var idx = --m_count;
+                value = m_array[idx];
 
-                    // clean
-                    m_array[idx] = default;
-                }
+                // clean
+                m_array[idx] = default;
             }
 
             return true;
@@ -64,22 +53,19 @@ namespace UnityCommon
 
         public bool TryReturn(in T value)
         {
-            lock (m_mutex)
+            // overflow
+            if (m_count + 1 >= m_maxCapacity)
             {
-                // overflow
-                if (m_count >= m_maxCapacity - 1)
-                {
-                    return false;
-                }
-
-                // increase size
-                if (m_count == m_array.Length)
-                {
-                    Resize(m_array.Length * 2);
-                }
-
-                m_array[m_count++] = value;
+                return false;
             }
+
+            // increase size
+            if (m_count == m_array.Length)
+            {
+                Resize(m_array.Length * 2);
+            }
+
+            m_array[m_count++] = value;
 
             return true;
         }
@@ -97,7 +83,7 @@ namespace UnityCommon
                 // copy
                 if (m_array != null)
                 {
-                    Array.Copy(m_array, m_newArray, Mathf.Clamp(m_array.Length, 0, newSize));
+                    Array.Copy(m_array, m_newArray, Mathf.Min(m_array.Length, newSize));
                 }
 
                 m_array = m_newArray;

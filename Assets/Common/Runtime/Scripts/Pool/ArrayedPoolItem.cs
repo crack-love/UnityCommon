@@ -1,23 +1,20 @@
-﻿using System;
-
-/// <summary>
+﻿/// <summary>
 /// 2020-06-13
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
     /// <summary>
-    /// Returning pool.
-    /// using <see cref="Singletone{T}"/> typed <see cref="ArrayedPool{T}"/>
+    /// Can return to pool as <see cref="ArrayedPool{T}"/> : <see cref="ObjectSingletone{T}"/>
     /// </summary>
     public abstract class ArrayedPoolItem<TDerived> : IPoolItem where TDerived : ArrayedPoolItem<TDerived>
     {
-        protected static ArrayedPool<TDerived> s_pool = Singletone<ArrayedPool<TDerived>>.Instance;
+        protected static ArrayedPool<TDerived> s_pool = ObjectSingletone<ArrayedPool<TDerived>>.Instance;
 
-        public void ClearReturn()
+        public bool ClearReturn()
         {
             Clear();
 
-            s_pool.TryReturn((TDerived)this);
+            return s_pool.TryReturn((TDerived)this);
         }
 
         public abstract void Clear();

@@ -4,17 +4,16 @@ using UnityCommon;
 /// <summary>
 /// 2020-09-11 금 오후 4:30:03, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
-    public interface IPool
+    public interface IPool<T>
     {
-        int Count { get; }
-        int MaxCapacity { get; set; }
-    }
+        public int Count { get; }
 
-    public interface IPool<T> : IPool
-    {
+        public int MaxCapacity { get; set; }
+
         bool TryGet(out T value);
+
         bool TryReturn(in T value);
     }
 }
