@@ -8,7 +8,7 @@ namespace Common
 {
     /// <summary>
     /// Can return to pool when <see cref="GC"/>
-    /// toward <see cref="ArrayedPool{T}"/> from <see cref="ObjectSingletone{T}"/>
+    /// toward <see cref="ArrayedPoolCallback{T}"/> from <see cref="ObjectSingletone{T}"/>
     /// </summary>
     public abstract class ArrayedPoolItemGC<TDerived> : IPoolItemCallback where TDerived : ArrayedPoolItemGC<TDerived>//, new()
     {

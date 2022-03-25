@@ -9,13 +9,13 @@ namespace Common
     /// <summary>
     /// Callback OnDepool and OnEnpool if target is IPoolItemCallback
     /// </summary>
-    public class ArrayedPoolCallback<T> : ArrayedPool<T>
+    public class ArrayedPoolCallback<T> : ArrayedPool<T> where T : IPoolItemCallback
     {
         public new bool TryGet(out T value)
         {
-            if (base.TryGet(out value) && value is IPoolItemCallback callback)
+            if (base.TryGet(out value))
             {
-                callback.OnDepool();
+                value.OnDepool();
 
                 return true;
             }
@@ -25,19 +25,9 @@ namespace Common
 
         public new bool TryReturn(in T value)
         {
-            if (base.TryReturn(value) && value is IPoolItemCallback callback)
+            if (base.TryReturn(value))
             {
-                try
-                {
-                    callback.OnEnpool();
-                }
-                catch (Exception e)
-                {
-                    // get rid off just pushed item
-                    base.TryGet(out T pop);
-
-                    Debug.LogException(e);
-                }
+                value.OnEnpool();
 
                 return true;
             }
