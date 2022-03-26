@@ -1,26 +1,14 @@
 ﻿using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 /// <summary>
 /// 2020-07-04 토 오후 8:37:28, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace UnityCommon
+namespace Common
 {
-    static class CommonSurrogateSelectorFactory
+    partial class CommonSurrogateSelector
     {
-        public static CommonSurrogateSelector CreateSurroageSelector()
-        {
-            CommonSurrogateSelector ss = new CommonSurrogateSelector();
-
-            ss.AddSurrogate(new Vector3SS());
-            ss.AddSurrogate(new Vector3IntSS());
-            ss.AddSurrogate(new QuaternionSS());
-
-            return ss;
-        }
-
-        class Vector3SS : CommonSurrogate<Vector3>
+        class Vector3S : CommonSurrogate<Vector3>
         {
             protected override void GetObjectData(Vector3 obj, SerializationInfo info, StreamingContext context)
             {
@@ -39,7 +27,7 @@ namespace UnityCommon
             }
         }
 
-        class Vector3IntSS : CommonSurrogate<Vector3Int>
+        class Vector3IntS : CommonSurrogate<Vector3Int>
         {
             protected override void GetObjectData(Vector3Int obj, SerializationInfo info, StreamingContext context)
             {
@@ -58,7 +46,7 @@ namespace UnityCommon
             }
         }
 
-        class QuaternionSS : CommonSurrogate<Quaternion>
+        class QuaternionS : CommonSurrogate<Quaternion>
         {
             protected override void GetObjectData(Quaternion obj, SerializationInfo info, StreamingContext context)
             {
