@@ -13,7 +13,6 @@ namespace Common
     /// <summary>
     /// Converting between primitive with byte[] always LittleEndian
     /// </summary>
-
     internal static class BitConverter
     {
         public const int CharByte = 2;
