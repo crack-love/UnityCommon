@@ -61,8 +61,8 @@ namespace Common
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            Check.Null(array);
-            Check.When(array.Length - arrayIndex < m_last + 1, "SerializableStack.CopyTo array length overflow");
+            //Check.Null(array);
+            //Check.When(array.Length - arrayIndex < m_last + 1, "SerializableStack.CopyTo array length overflow");
 
             for (int i = 0; i <= m_last; ++i)
             {
@@ -82,14 +82,14 @@ namespace Common
 
         public T Peek()
         {
-            Check.When(m_last < 0, "SerializableStack.Peek OutOfIndex");
+            //Check.When(m_last < 0, "SerializableStack.Peek OutOfIndex");
 
             return m_stack[m_last];
         }
 
         public T Pop()
         {
-            Check.When(m_last < 0, "SerializableStack.Pop OutOfIndex");
+           // Check.When(m_last < 0, "SerializableStack.Pop OutOfIndex");
 
             var res = m_stack[m_last];
 
@@ -153,7 +153,7 @@ namespace Common
             // calling equals struct boxing
             else
             {
-                Check.Throw(new Exception("Struct type is not equatable with self type : " + typeof(T).Name));
+               // Check.Throw(new Exception("Struct type is not equatable with self type : " + typeof(T).Name));
 
                 return -1;
             }

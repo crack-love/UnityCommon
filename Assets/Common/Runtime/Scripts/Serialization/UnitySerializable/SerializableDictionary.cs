@@ -15,10 +15,7 @@ namespace Common
         }
 
         [SerializeField] KeyValuePair[] m_serializedPairs;
-
-#if UNITY_EDITOR
         [SerializeField] bool m_deserializationFail;
-#endif
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
@@ -54,10 +51,11 @@ namespace Common
                 if (ContainsKey(m_serializedPairs[i].Key))
                 {
                     m_deserializationFail = true;
-                    return;
                 }
-
-                Add(m_serializedPairs[i].Key, m_serializedPairs[i].Value);
+                else
+                {
+                    Add(m_serializedPairs[i].Key, m_serializedPairs[i].Value);
+                }
             }
         }
     }

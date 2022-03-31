@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityCommon;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
@@ -21,4 +21,4 @@ namespace UnityCommon
             m_bf = new BinaryFormatter(m_css, new StreamingContext(StreamingContextStates.All));
         }
     }
-}
+}*/
