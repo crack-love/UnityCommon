@@ -9,7 +9,7 @@ using Task = UnityCommon.Task;
 // 경량화 버전. 닷넷 코어 참조하여 작성함
 // https://referencesource.microsoft.com/#mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs
 
-namespace UnityCompilerServices
+namespace UnityCommon.CompilerServices
 {
     /// <summary>
     /// Provides a builder for asynchronous methods that return <see cref="UnityTask"/>.

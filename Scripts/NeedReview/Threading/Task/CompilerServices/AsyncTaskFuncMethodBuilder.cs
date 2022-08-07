@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using UnityCommon;
 using Task = UnityCommon.Task;
 
-namespace UnityCompilerServices
+namespace UnityCommon.CompilerServices
 {
     /// <summary>
     /// Provides a builder for asynchronous methods that return <see cref="UnityTask{TResult}"/>.

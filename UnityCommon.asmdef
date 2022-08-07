@@ -1,6 +1,6 @@
 {
     "name": "UnityCommon",
-    "rootNamespace": "UnityCommon",
+    "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
