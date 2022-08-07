@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 2022-03-25 오후 7:00:09, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace Common
+namespace UnityCommon
 {
     public static class GameObjectExtension
     {

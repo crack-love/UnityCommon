@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 /// <summary>
 /// 2021-05-25 화 오후 7:58:07, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public partial class LinkedList<T> : ISerializable
     {

@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 /// <summary>
 /// 2020-07-08 수 오후 7:00:16, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Item index is fixed after remove

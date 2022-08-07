@@ -12,7 +12,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 2021-04-06 화 오후 2:08:19, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     [Serializable]
     public class SerializableStack<T> : ICollection<T>, IReadOnlyCollection<T>

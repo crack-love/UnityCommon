@@ -108,7 +108,7 @@ namespace UnityCommon
 
                     while (src != null)
                     {
-                        var start = src.IndexOf(" at UnityCommon.Check.");
+                        var start = src.IndexOf(" at UnityCheck.");
                         if (start < 0)
                         {
                             break;

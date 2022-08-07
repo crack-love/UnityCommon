@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 2021-01-12 화 오후 4:51:37, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public static class ListExtension
     {

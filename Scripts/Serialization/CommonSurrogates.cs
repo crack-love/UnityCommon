@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 2020-07-04 토 오후 8:37:28, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     partial class CommonSurrogateSelector
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 2020-06-13
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Can return to pool when <see cref="GC"/>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// 열거형 산술 연산자 

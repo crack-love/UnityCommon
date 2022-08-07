@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 2020-09-20
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public class LinkedListNode<T> : IRemovableNode<T>
     {
@@ -36,7 +36,8 @@ namespace Common
 
         void IRemovableNode<T>.Remove()
         {
-            m_list.Remove(this);
+            if (m_list == null)
+                m_list.Remove(this);
         }
     }
 }

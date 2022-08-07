@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 /// <summary>
 /// 2021-04-03 토 오후 9:01:34, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Custom Binary Writer not allocating garbage

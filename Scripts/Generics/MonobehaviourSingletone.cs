@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Common
+namespace UnityCommon
 {
     public class MonobehaviourSingletone<T> : MonoBehaviour
         where T : MonoBehaviour
@@ -10,7 +10,7 @@ namespace Common
 
         static MonobehaviourSingletone()
         {
-            m_mutex = new object();Debug.Log("Moutex " + typeof(T).FullName);
+            m_mutex = new object();Debug.Log("Mutex " + typeof(T).FullName);
         }
 
         public static T Instance

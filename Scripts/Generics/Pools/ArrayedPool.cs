@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 2021-05-24 월 오후 10:54:18, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public class ArrayedPool<T> : IPool<T>
     {

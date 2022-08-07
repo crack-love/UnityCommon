@@ -12,7 +12,7 @@ namespace UnityCommon
 #if UNITY_EDITOR
     public class MeshAssetGenerator : MonoBehaviour
     {
-        [InspectorButton("GenerateGrassMesh")]
+        [Button("GenerateGrassMesh")]
         public bool btn0;
 
         void GenerateGrassMesh()
@@ -42,7 +42,7 @@ namespace UnityCommon
             AssetDatabase.CreateAsset(mesh, "assets/grassMesh.asset");
         }
 
-        [InspectorButton("GenerateSimpleGrassMesh")]
+        [Button("GenerateSimpleGrassMesh")]
         public bool btn1;
         public void GenerateSimpleGrassMesh()
         {

@@ -13,7 +13,7 @@ using UnityEditor;
 /// 2022.03.24. change after/below type bool to enum
 /// </log>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Common
+namespace UnityCommon
 {
     [System.Diagnostics.Conditional("UNITY_EDITOR")]
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = true, Inherited = true)]

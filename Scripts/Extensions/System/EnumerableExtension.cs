@@ -5,7 +5,7 @@ using System.Linq;
 /// <summary>
 /// 2020-12-22 화 오후 6:45:33, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public static class EnumerableExtension
     {

@@ -3,7 +3,7 @@
 /// <summary>
 /// 2020-12-23 수 오후 1:33:23, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public struct Vector4
     {

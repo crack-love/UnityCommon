@@ -8,7 +8,7 @@ using UnityEditor;
 /// <summary>
 /// 2020.06.10.수.23.51
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Binding field will be hidden

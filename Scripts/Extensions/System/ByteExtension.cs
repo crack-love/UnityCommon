@@ -2,7 +2,7 @@
 /// <summary>
 /// 2021-04-20 화 오후 9:31:36, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public static class ByteExtension
     {

@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 2020-06-12
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public class LinkedPool<T> : IPool<T> where T : ILinkedPoolItem<T>
     {

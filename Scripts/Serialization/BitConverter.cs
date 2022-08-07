@@ -8,7 +8,7 @@
 //  happen using parameter buffer
 //  YGK
 
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Converting between primitive with byte[] always LittleEndian

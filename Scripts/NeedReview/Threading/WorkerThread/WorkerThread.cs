@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using ThreadPriority = System.Threading.ThreadPriority;
 using UnityEngine;
+using UnityCommon;
 
 /// <summary>
 /// 2020-06-01 월 오후 6:08:04, 4.0.30319.42000, YONG-PC, Yong
@@ -27,10 +28,10 @@ namespace UnityCommon
         [SerializeField] int _yieldMs = 100;
         [SerializeField] int _maxCount = 10000;
 
-        [SerializeField, InspectorReadOnly] int _id;
-        [SerializeField, InspectorReadOnly] bool _isRunning;
-        [SerializeField, InspectorReadOnly] bool _isAbortSafeCalled;
-        [SerializeField, InspectorReadOnly] int _lastCount;
+        [SerializeField, ReadOnly] int _id;
+        [SerializeField, ReadOnly] bool _isRunning;
+        [SerializeField, ReadOnly] bool _isAbortSafeCalled;
+        [SerializeField, ReadOnly] int _lastCount;
 
         Thread _thread;
         ConcurrentQueue<IWorkerThreadAction> _queue;

@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 2020-06-12
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public class LinkedPoolCallback<T> : LinkedPool<T> where T : ILinkedPoolItemCallback<T>
     {

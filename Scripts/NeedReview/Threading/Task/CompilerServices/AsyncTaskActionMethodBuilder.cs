@@ -3,14 +3,16 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityCommon;
+using Task = UnityCommon.Task;
 
 // 경량화 버전. 닷넷 코어 참조하여 작성함
 // https://referencesource.microsoft.com/#mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs
 
-namespace UnityCommon.CompilerServices
+namespace UnityCompilerServices
 {
     /// <summary>
-    /// Provides a builder for asynchronous methods that return <see cref="UnityCommon.Task"/>.
+    /// Provides a builder for asynchronous methods that return <see cref="UnityTask"/>.
     /// This type is intended for compiler use only.
     /// </summary>
     /// <remarks>
@@ -98,7 +100,7 @@ namespace UnityCommon.CompilerServices
         }
 
         /// <summary>
-        /// Gets the <see cref="UnityCommon.Task{TResult}"/> for this builder.
+        /// Gets the <see cref="UnityTask{TResult}"/> for this builder.
         /// </summary>
         public Task Task
         {

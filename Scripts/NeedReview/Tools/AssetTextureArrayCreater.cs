@@ -300,14 +300,14 @@ namespace UnityCommon
             return array;
         }
 
-        [InspectorButton("CreateAlbedo", "Create Albedo")] public bool a0;
+        [Button("CreateAlbedo", "Create Albedo")] public bool a0;
         public void CreateAlbedo()
         {
             var array = CreateReturnAlbedo();
             SaveEditorAsset(array, string.Format("Assets/Texture2DArrayAlbedo({0})_{1}x{2}_{3}_0.asset", array.depth, array.width, array.height, array.format));
         }
 
-        [InspectorButton("CreateNormalMaps", "Create Normal")] public bool a1;
+        [Button("CreateNormalMaps", "Create Normal")] public bool a1;
         public void CreateNormalMaps()
         {
             if (KeepRatioFromIndex0)

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// 열거형 로직 연산자 

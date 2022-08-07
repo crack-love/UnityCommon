@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Adding Some Comment to GameObject

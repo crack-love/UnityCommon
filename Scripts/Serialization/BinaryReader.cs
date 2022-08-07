@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 /// <summary>
 /// 2021-04-04 일 오후 2:07:43, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Custom Binary Reader not allocating garbage

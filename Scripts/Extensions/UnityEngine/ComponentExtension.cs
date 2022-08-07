@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Common
+namespace UnityCommon
 {
     public static class ComponentExtension
     {

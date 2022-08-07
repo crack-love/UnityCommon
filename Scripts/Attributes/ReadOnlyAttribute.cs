@@ -10,7 +10,7 @@ using UnityEditor;
 /// 2020-03-31 화 오후 4:38:06 : 네임스페이스 변경
 /// </log>
 //------------------------------------------------------------------------------------------------------------------
-namespace Common
+namespace UnityCommon
 {
 	/// <summary>
 	/// Inspector ReadOnly

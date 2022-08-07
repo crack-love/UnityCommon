@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 2021-04-19 월 오후 6:37:24, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// A List can return to pool

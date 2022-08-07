@@ -11,7 +11,7 @@ namespace UnityCommon
 {
     class WhenAnySource : TaskSourceBase<WhenAnySource>, ILoopable
     {
-        LinkedList<Task> m_tasks;
+        UnityCommon.LinkedList<Task> m_tasks;
 
         public static WhenAnySource Create(IEnumerable<Task> tasks)
         {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization;
 
-namespace Common
+namespace UnityCommon
 {
     public static class SystemObjectExtension
     {

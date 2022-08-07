@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 2022-03-20 오후 11:56:31, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace Common
+namespace UnityCommon
 {
     class ComparisonComparer<T> : Comparer<T>
     {

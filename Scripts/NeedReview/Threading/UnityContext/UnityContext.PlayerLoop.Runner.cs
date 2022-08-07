@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityCommon;
 
 /// <summary>
 /// 2020-06-01 월 오후 6:08:04, 4.0.30319.42000, YONG-PC, Yong
@@ -70,7 +71,7 @@ namespace UnityCommon
 
         class UpdateRunner
         {
-            LinkedList<ILoopable> m_list = new LinkedList<ILoopable>();
+            UnityCommon.LinkedList<ILoopable> m_list = new LinkedList<ILoopable>();
 
             public void Queue(ILoopable action)
             {
@@ -92,7 +93,8 @@ namespace UnityCommon
                     {
                         if (act.Equals(action))
                         {
-                            m_list.Remove(node);
+                            node.Remove();
+                            //m_list.Remove(node);
                             return;
                         }
                     }
@@ -109,7 +111,8 @@ namespace UnityCommon
                     {
                         if (func.Equals(action))
                         {
-                            m_list.Remove(node);
+                            node.Remove();
+                            //m_list.Remove(node);
                             return;
                         }
                     }
@@ -125,7 +128,9 @@ namespace UnityCommon
                     // invalid
                     if (runner == null)
                     {
-                        m_list.Remove(node);
+                        node.Remove();
+                        //m_list.Remove(node);
+                        continue;
                     }
 
                     try
@@ -133,13 +138,15 @@ namespace UnityCommon
                         // finished
                         if (!runner.MoveNext())
                         {
-                            m_list.Remove(node);
+                            node.Remove();
+                            //m_list.Remove(node);
                         }
                     }
                     // node throw exception
                     catch (Exception e)
                     {
-                        m_list.Remove(node);
+                        node.Remove();
+                        //m_list.Remove(node);
 
                         Debug.LogException(e);
                     }

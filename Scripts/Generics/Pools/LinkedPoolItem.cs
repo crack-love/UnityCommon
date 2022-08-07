@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 2020-09-22
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Can return to pool as <see cref="LinkedPool{T}"/> : <see cref="ObjectSingletone{T}"/>

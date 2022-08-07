@@ -9,7 +9,7 @@ using UnityEditor;
 /// <summary>
 /// 2020-04-04 오후 3:25:19, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// 인스펙터 멀티라인 코멘트

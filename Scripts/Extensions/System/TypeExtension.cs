@@ -3,7 +3,7 @@
 /// <summary>
 /// 2020-09-23 수 오후 7:15:13, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public static class TypeExtension
     {

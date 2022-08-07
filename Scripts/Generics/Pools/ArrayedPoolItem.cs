@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 2020-06-13
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Can return to pool as <see cref="ArrayedPool{T}"/> : <see cref="ObjectSingletone{T}"/>

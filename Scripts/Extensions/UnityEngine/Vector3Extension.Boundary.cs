@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Common
+namespace UnityCommon
 {
     public static class Vector3ExtensionBoundary
     {        

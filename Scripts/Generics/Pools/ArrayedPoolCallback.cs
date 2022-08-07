@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 2020-09-20 일 오후 9:32:51, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Callback OnDepool and OnEnpool if target is IPoolItemCallback

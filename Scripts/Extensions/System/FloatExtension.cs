@@ -1,7 +1,7 @@
 ﻿using Math = System.Math;
 using Assert = UnityEngine.Assertions.Assert;
 
-namespace Common
+namespace UnityCommon
 {
     public static class FloatExtension
     {

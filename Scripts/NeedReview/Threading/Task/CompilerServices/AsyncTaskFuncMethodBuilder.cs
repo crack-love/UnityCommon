@@ -5,12 +5,13 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityCommon;
 using Task = UnityCommon.Task;
 
-namespace UnityCommon.CompilerServices
+namespace UnityCompilerServices
 {
     /// <summary>
-    /// Provides a builder for asynchronous methods that return <see cref="UnityCommon.Task{TResult}"/>.
+    /// Provides a builder for asynchronous methods that return <see cref="UnityTask{TResult}"/>.
     /// This type is intended for compiler use only.
     /// </summary>
     /// <remarks>
@@ -99,7 +100,7 @@ namespace UnityCommon.CompilerServices
         }
 
         /// <summary>
-        /// Gets the <see cref="UnityCommon.Task{TResult}"/> for this builder.
+        /// Gets the <see cref="UnityTask{TResult}"/> for this builder.
         /// </summary>
         public Task<TResult> Task
         {

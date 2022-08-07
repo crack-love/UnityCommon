@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 2020-12-16 수 오전 1:38:13, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     public static class StringExtension
     {

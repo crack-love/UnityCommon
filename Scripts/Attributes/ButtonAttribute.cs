@@ -8,7 +8,7 @@ using UnityEditor;
 /// <summary>
 /// 2022-03-24 오후 3:25:19, 4.0.30319.42000, DESKTOP-PD5J20B, maste
 /// </summary> 
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// 인스펙터 메소드 버튼. 필드 바인딩 필요

@@ -2,7 +2,7 @@
 using System.Reflection;
 using UnityEngine;
 
-namespace Common.Reflection
+namespace UnityReflection
 {
     public static class ReflectionEx
     {

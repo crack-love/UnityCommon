@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 2021-01-27 수 오후 4:18:44, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
    /// <summary>
    /// 싱글톤 제공

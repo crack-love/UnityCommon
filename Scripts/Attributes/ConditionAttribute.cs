@@ -7,10 +7,10 @@ using UnityEditor;
 //------------------------------------------------------------------------------------------------------------------
 /// <log>
 /// 2020.03.27 : 네임스페이스 변경. 주석 정리
-/// 2022.03.24 : change namespace UnityCommon to Common. add conditional attribute.
+/// 2022.03.24 : change namespace UnityCommon to  add conditional attribute.
 /// </log>
 //------------------------------------------------------------------------------------------------------------------
-namespace Common
+namespace UnityCommon
 {
     [System.Diagnostics.Conditional("UNITY_EDITOR")]
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = true, Inherited = true)]

@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 2021-04-19 월 오후 6:35:40, 4.0.30319.42000, YONG-PC, Yong
 /// </summary>
-namespace Common
+namespace UnityCommon
 {
     /// <summary>
     /// Generic List's Pool that returning on GC
