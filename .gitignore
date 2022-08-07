@@ -9,7 +9,7 @@
 /[Uu][Ii][Ee]lements[Ss]chema
 .vsconfig
 *.unity
-#*.meta
+*.meta
 
 /[Ll]ibrary/
 /[Tt]emp/

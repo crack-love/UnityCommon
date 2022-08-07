@@ -1,8 +1,8 @@
 {
-    "name": "UnityCommon.Editor",
+    "name": "UnityCommon.Editors",
     "rootNamespace": "",
     "references": [
-        "GUID:ad29643069d8f0a498f6eaf5b316b69f"
+        "UnityCommon"
     ],
     "includePlatforms": [
         "Editor"
