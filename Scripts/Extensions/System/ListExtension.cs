@@ -14,9 +14,14 @@ namespace UnityCommon
         /// </summary>
         public static void SetSize<T>(this List<T> list, int size)
         {
+            SetSize(list, size, default);
+        }
+
+        public static void SetSize<T>(this List<T> list, int size, T value)
+        {
             while (list.Count < size)
             {
-                list.Add(default);
+                list.Add(value);
             }
             while (list.Count > size)
             {
