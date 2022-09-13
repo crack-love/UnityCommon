@@ -2,7 +2,7 @@
 
 namespace UnityCommon
 {
-    class MonoBehaviourSingletoneAutoGenerate<TDerived> : MonoBehaviour
+    public class MonoBehaviourSingletoneAutoGenerate<TDerived> : MonoBehaviour
         where TDerived : MonoBehaviourSingletoneAutoGenerate<TDerived>
     {
         static readonly object m_mutext = new object();
@@ -46,7 +46,7 @@ namespace UnityCommon
         }
     }
 
-    class MonoBehaviourSingletoneAutoGenerate<TDerived, TServ> : MonoBehaviour
+    public class MonoBehaviourSingletoneAutoGenerate<TDerived, TServ> : MonoBehaviour
         where TDerived : MonoBehaviourSingletoneAutoGenerate<TDerived, TServ>, TServ
         where TServ : class
     {
