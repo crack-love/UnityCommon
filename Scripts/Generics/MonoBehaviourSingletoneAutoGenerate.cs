@@ -8,7 +8,7 @@ namespace UnityCommon
         static readonly object m_mutext = new object();
         static TDerived m_instance = null;
 
-        public TDerived Instance
+        public static TDerived Instance
         {
             get
             {
@@ -53,7 +53,7 @@ namespace UnityCommon
         static readonly object m_mutext = new object();
         static TServ m_instance = null;
 
-        public TServ Instance
+        public static TServ Instance
         {
             get
             {
