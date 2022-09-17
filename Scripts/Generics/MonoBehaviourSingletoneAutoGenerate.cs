@@ -74,7 +74,7 @@ namespace UnityCommon
 
         static bool IsInstanceInvalid()
         {
-            return m_instance == null;
+            return !(m_instance as MonoBehaviour);
         }
 
         static TServ FindObject()
