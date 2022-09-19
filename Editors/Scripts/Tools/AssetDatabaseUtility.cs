@@ -73,17 +73,20 @@ namespace UnityCommon.Editors
         /// </summary>
         public static void LoadAllAssetsAtDir<T>(List<T> buffer, params string[] dirs) where T : UnityEngine.Object
         {
-            string[] guids = AssetDatabase.FindAssets(null, dirs);
-
-            for (int i = 0; i < guids.Length; ++i)
+            if (dirs != null && dirs.Length > 0)
             {
-                string guid = guids[i];
-                string path = AssetDatabase.GUIDToAssetPath(guid);
-                T asset = AssetDatabase.LoadAssetAtPath<T>(path);
+                string[] guids = AssetDatabase.FindAssets(null, dirs);
 
-                if (asset)
+                for (int i = 0; i < guids.Length; ++i)
                 {
-                    buffer.Add(asset);
+                    string guid = guids[i];
+                    string path = AssetDatabase.GUIDToAssetPath(guid);
+                    T asset = AssetDatabase.LoadAssetAtPath<T>(path);
+
+                    if (asset)
+                    {
+                        buffer.Add(asset);
+                    }
                 }
             }
         }

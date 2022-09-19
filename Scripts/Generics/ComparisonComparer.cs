@@ -6,7 +6,7 @@ using System.Collections.Generic;
 /// </summary> 
 namespace UnityCommon
 {
-    class ComparisonComparer<T> : Comparer<T>
+    public class ComparisonComparer<T> : Comparer<T>
     {
         readonly Comparison<T> m_cmparison;
 
