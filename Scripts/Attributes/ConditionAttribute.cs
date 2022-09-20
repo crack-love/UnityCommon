@@ -47,6 +47,10 @@ namespace UnityCommon
 
             // 1. 최상위 타입 루트로 이동
             int length = propertySearching.propertyPath.LastIndexOf('.');
+            if (length < 0)
+            {
+                return;
+            }
             var path = propertySearching.propertyPath.Substring(0, length);
             propertySearching.Reset();
 
